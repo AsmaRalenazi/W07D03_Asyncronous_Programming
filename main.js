@@ -36,27 +36,50 @@ const writeFile = () => {
   //q4
   //Write a function getPost that takes one parameter id and returns
   // the post from JSONPlaceholder API that has the passed id.
-const getPost = (id) => {
-        console.log('GET /getPost');
-        axios
-          .get(`https://jsonplaceholder.typicode.com/posts/${id}`)
-          // in `.then()` we add the code for the success
-          .then((response) => {
-            console.log('DATA', response.data);
-          })
-          // in `.catch()` we add the code to handel the error
-          .catch((err) => {
-            console.log('ERR', err);
-          });
-  };
+// const getPost = (id) => {
+//         console.log('GET /getPost');
+//         axios
+//           .get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+//           // in `.then()` we add the code for the success
+//           .then((response) => {
+//             console.log('DATA', response.data);
+//           })
+//           // in `.catch()` we add the code to handel the error
+//           .catch((err) => {
+//             console.log('ERR', err);
+//           });
+//   };
   
-  getPost(1);
-  getPost(50);
+//   getPost(1);
+//   getPost(50);
+
+
+
+//q5
+//Write an async function getPostAsync that does the same as the previous
+// function but it must be implemented by using async and await.
+
+const getPostAsync = async (data) => {
+
+        response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${data}`)
+      // in `.then()` we add the code for the success
+      .then((response) => {
+        console.log('DATA', response.data);
+      })
+      // in `.catch()` we add the code to handel the error
+      .catch((err) => {
+        console.log('ERR', err);
+      });
+   };
+    getPostAsync(1)
+    getPostAsync(50)
 
 
 
 
 
+
+    
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
