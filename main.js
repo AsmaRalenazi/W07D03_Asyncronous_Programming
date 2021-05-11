@@ -16,6 +16,38 @@ const fs = require('fs');
      });
   };
 readFile()
+
+
+
+//q3
+//Write a function writeFile that writes A new file has been created on a new file called text.txt.
+
+const writeFile = () => {
+    fs.writeFile('./text.txt',`A new file has been created`,
+        (err) => {
+          if (err) {
+            console.log(err);
+          }
+          console.log('DONE WRITE OVER THAT FILE');
+        }
+      );
+  };
+  writeFile()
+  //q4
+  //Write a function getPost that takes one parameter id and returns
+  // the post from JSONPlaceholder API that has the passed id.
+
+// const getPost = (id) => {
+//     // TODO: Your code here
+//   };
+  
+//   getPost(1);
+//   getPost(50);
+
+
+
+
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log('SERVER IS WORKING ON http://localhost:' + PORT);
