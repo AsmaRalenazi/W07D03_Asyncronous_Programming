@@ -15,7 +15,7 @@ const fs = require('fs');
          console.log('DATA: ', data.toString());
      });
   };
-readFile()
+// readFile()
 
 
 
@@ -32,17 +32,27 @@ const writeFile = () => {
         }
       );
   };
-  writeFile()
+//   writeFile()
   //q4
   //Write a function getPost that takes one parameter id and returns
   // the post from JSONPlaceholder API that has the passed id.
-
-// const getPost = (id) => {
-//     // TODO: Your code here
-//   };
+const getPost = (id) => {
+        console.log('GET /getPost');
+        axios
+          .get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+          // in `.then()` we add the code for the success
+          .then((response) => {
+            console.log('DATA', response.data);
+          })
+          // in `.catch()` we add the code to handel the error
+          .catch((err) => {
+            console.log('ERR', err);
+          });
+  };
   
-//   getPost(1);
-//   getPost(50);
+  getPost(1);
+  getPost(50);
+
 
 
 
