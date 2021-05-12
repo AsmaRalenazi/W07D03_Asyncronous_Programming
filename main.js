@@ -123,6 +123,38 @@ const copyFile = (fileName) => {
 
 
 
+
+
+//q3
+//Write a function createPost that accepts one argument post and
+// sends a post request to https://jsonplaceholder.typicode.com/posts 
+//then returns the newly added post, make sure to parse the response ,
+//checkout the Axios documentation for more information on creating a POST request.
+
+// the API Expects JSON data to be sent and that's why `JSON.stringify` is used
+const newPost = JSON.stringify({
+    title: "JavaScript Basics",
+    body: "This post contains information about javaScript ",
+    // the id of the user who is going to create the post
+
+    userId: 1,
+  });
+  
+  const createPost = (post) => {
+    axios({
+        method: 'post',
+        url: 'https://jsonplaceholder.typicode.com/posts ',
+        data: {
+          firstName: 'Asma',
+          lastName: 'Al-enazi'
+        }
+      });
+  };
+//   createPost(newPost)
+
+
+
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log('SERVER IS WORKING ON http://localhost:' + PORT);
