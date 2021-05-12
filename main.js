@@ -197,6 +197,29 @@ const getUsers = async() => {
 
 
 
+//q6
+//Write a function saveUsers that would save all the users from JSONPLaceholder API
+// to a new file called users.txt.
+//users.txt.انشئ ملف اول واسميه
+// JSONPLaceholder APIبعدين احفظ فيه اليوزر اللي باخذها من 
+const saveUsers = () => {
+    fs.writeFile('./users.txt',
+        (err) => {
+      if (err) {
+        console.log(err);
+      }
+      console.log(`https://jsonplaceholder.typicode.com/users/1/posts`);
+    }
+  );
+  fs.readFile ("./users.txt",(err, data) => {
+    if (err) {
+      console.log('ERR',err);
+    }
+    console.log('DATA: ', data.toString());
+});
+  };
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
