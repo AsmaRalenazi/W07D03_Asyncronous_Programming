@@ -83,17 +83,21 @@ const getPostAsync = async (data) => {
 // Check out this link from the Node JS documentation for more information.
 
 
-//use  
-//fs.writeFileSync(file, data[, options])
+//i try use this   fs.writeFileSync(file, data[, options]) 
+//and i think this is true   appendFile('message.txt', 'data to append',
 const appendToFile = (data) => {
-    fs.writeFileSync(`./data.txt`,`hello`,
-    (err) => {
-        if (err) {
-          console.log(err);
-        }
-            console.log('DONE WRITE OVER THAT FILE');
-          }
-    );
+    // fs.writeFileSync(`./data.txt`,`hello`,
+    // (err) => {
+    //     if (err) {
+    //       console.log(err);
+    //     }
+    //         console.log('DONE WRITE OVER THAT FILE');
+    //       }
+    // );
+    appendFile('./data.txt', 'hi', (err) => {
+        if (err) throw err;
+        console.log('The "hi" was appended to file!');
+      });
 };
 //   appendToFile();
   
