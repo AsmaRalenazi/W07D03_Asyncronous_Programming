@@ -147,7 +147,7 @@ const newPost = JSON.stringify({
   const createPost = (post) => {
     axios({
         method: 'post',
-        url: 'https://jsonplaceholder.typicode.com/posts ',
+        url: 'https://jsonplaceholder.typicode.com/posts',
         data: {
           firstName: 'Asma',
           lastName: 'Al-enazi'
@@ -164,21 +164,29 @@ const newPost = JSON.stringify({
 // The function should update the post from JSONPlaceholder 
 //with the passed postId using the new data provided,
 // and then it should return the response after parsing. 
-//Read the JSONPlaceholder documentation to be find the endpoint and check out Axios documentation for more information on creating a PUT request.
+//Read the JSONPlaceholder documentation to be find the endpoint and check out Axios documentation 
+//for more information on creating a PUT request.
 
-// const newPost = JSON.stringify({
-//     // the post id that we want to update, change it when trying to update another post
-//     id: 1,
-//     title: "Updated Title",
-//     body: "Updated body",
-//     userId: 1,
-//   });
+const newPost = JSON.stringify({
+    // the post id that we want to update, change it when trying to update another post
+    id: 1,
+    title: "Updated Title",
+    body: "Updated body",
+    userId: 1,
+  });
   
-//   const updatePost = (postId, data) => {
-//     // TODO: Your code here
-//   };
-  
-//   updatePost(1, newPost);
+  const updatePost = (id, data) => {
+    axios.put('https://jsonplaceholder.typicode.com/posts/1',{
+      method: 'PUT',
+  body: JSON.stringify({
+    id: 1,
+    title: "Updated Title",
+    body: "Updated body",
+    userId: 1,
+    })
+  })
+}
+  updatePost(1, newPost);
 
 
 
