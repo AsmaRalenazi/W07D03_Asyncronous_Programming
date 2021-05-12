@@ -95,7 +95,7 @@ const appendToFile = (data) => {
           }
     );
 };
-  appendToFile();
+//   appendToFile();
   
 
 
@@ -108,10 +108,18 @@ const appendToFile = (data) => {
   // it will create or overwrite copied file if exist and when it is done copying log done .
   // Search the NodeJS file system documentation for more information.
 
-const copyFile = (fileName) => {
-    // TODO: Your code here
-  };
+  //use 
+  //copyFile('source.txt', 'destination.txt', callback);
 
+const copyFile = (fileName) => {
+    copyFile('./data.txt', 'copy_of_data.txt',(err, data) => {
+        if (err) {
+          console.log('ERR',err);
+        }
+        console.log('DATA: ', data.toString());
+    });
+  };
+//   copyFile()
 
 
 
