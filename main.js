@@ -155,6 +155,49 @@ const newPost = JSON.stringify({
 
 
 
+//q4
+//Write a function updatePost that accepts two arguments postId and data.
+// The function should update the post from JSONPlaceholder 
+//with the passed postId using the new data provided,
+// and then it should return the response after parsing. 
+//Read the JSONPlaceholder documentation to be find the endpoint and check out Axios documentation for more information on creating a PUT request.
+
+// const newPost = JSON.stringify({
+//     // the post id that we want to update, change it when trying to update another post
+//     id: 1,
+//     title: "Updated Title",
+//     body: "Updated body",
+//     userId: 1,
+//   });
+  
+//   const updatePost = (postId, data) => {
+//     // TODO: Your code here
+//   };
+  
+//   updatePost(1, newPost);
+
+
+
+//q5
+//Write an async function getUsers that returns all users from JSONPLaceholder API 
+//by using async and await. Search JSONPlaceholder documentation to know how to get the users.
+
+const getUsers = async() => {
+    response = await axios.get(`https://jsonplaceholder.typicode.com/users`)
+    // in `.then()` we add the code for the success
+    .then((response) => {
+      console.log('DATA', response.data);
+    })
+    // in `.catch()` we add the code to handel the error
+    .catch((err) => {
+      console.log('ERR', err);
+    });
+ };
+//  getUsers()
+
+
+
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log('SERVER IS WORKING ON http://localhost:' + PORT);
